@@ -1,0 +1,12 @@
+[
+  {
+    "drug": "Sotorasib",
+    "target": "KRAS",
+    "disease": "NSCLC"
+  },
+  {
+    "drug": "Adagrasib",
+    "target": "KRAS",
+    "disease": "Colorectal Cancer"
+  }
+]

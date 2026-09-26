@@ -1,0 +1,42 @@
+User
+ │
+ ▼
+
+Supervisor Agent
+
+ │
+ ▼
+
+Graph Agent
+
+ │
+ ▼
+
+MCP Gateway
+
+ │
+ ▼
+
+Graph Tool
+
+ │
+ ├───────────────┐
+ │               │
+
+ ▼               ▼
+
+Traversal    GDS Analytics
+
+                 │
+
+     ┌───────────┼───────────┐
+
+     ▼           ▼           ▼
+
+PageRank  Degree Centrality  Betweenness
+
+                 │
+
+                 ▼
+
+           Research Report

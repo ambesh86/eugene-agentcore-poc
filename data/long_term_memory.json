@@ -1,0 +1,13 @@
+{
+    "KRAS": {
+        "entity": "KRAS",
+        "last_query": "Tell me about KRAS inhibitors.",
+        "graph_result": {
+            "traversal": {
+                "gene": "KRAS",
+                "pathway": "MAPK",
+                "disease": "Pancreatic Cancer"
+            }
+        }
+    }
+}

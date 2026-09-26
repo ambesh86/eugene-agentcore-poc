@@ -1,0 +1,14 @@
+services:
+  eugene-agentcore-poc:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      AWS_REGION: ${AWS_REGION:-us-east-1}
+      USE_BEDROCK_SUPERVISOR: ${USE_BEDROCK_SUPERVISOR:-false}
+      BEDROCK_MODEL_ID: ${BEDROCK_MODEL_ID:-anthropic.claude-3-5-haiku-20241022-v1:0}
+      DATA_SOURCE: ${DATA_SOURCE:-local}
+      S3_BUCKET: ${S3_BUCKET:-}
+      S3_DATA_PREFIX: ${S3_DATA_PREFIX:-data}
+    env_file:
+      - .env

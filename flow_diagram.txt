@@ -1,0 +1,162 @@
+┌──────────────┐
+│    USER      │
+│ Ask Question │
+└──────┬───────┘
+       │
+       ▼
+┌────────────────────┐
+│    Streamlit UI    │
+│  Collect Query     │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│  Supervisor Agent  │
+│                    │
+│ Intent Detection   │
+│ Agent Selection    │
+│ Workflow Planning  │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ LangGraph Workflow │
+│  (State Manager)   │
+└─────────┬──────────┘
+          │
+          ▼
+    Shared State
+   (ResearchState)
+          │
+ ┌────────┼────────┐
+ │        │        │
+ ▼        ▼        ▼
+
+Foundation Graph Publication
+ Agent     Agent     Agent
+
+ │         │          │
+ ▼         ▼          ▼
+
+Foundation Neo4j    PubMed
+ Tools     Tools     Tools
+
+ └─────────┼─────────┘
+           │
+           ▼
+
+     MCP Gateway
+   (Tool Router)
+
+           │
+           ▼
+
+     Report Node
+
+           │
+           ▼
+
+      Final Report
+
+           │
+           ▼
+
+          USER
+
+####################################################
+Query 1-Tell me about KRAS inhibitors
+Query 2-Show publication evidence for KRAS
+Query 3-Show publications related to KRAS
+Query 4-Analyze KRAS importance
+####################################################
+
+┌─────────────────────────────┐
+│            USER             │
+│ Tell me about KRAS          │
+│ inhibitors                  │
+└──────────────┬──────────────┘
+               │
+               ▼
+
+┌─────────────────────────────┐
+│        Streamlit UI         │
+│                             │
+│ Input Query                │
+│ Show Results               │
+└──────────────┬──────────────┘
+               │
+               ▼
+
+┌─────────────────────────────┐
+│      Supervisor Agent       │
+│                             │
+│ Intent Classification       │
+│ Entity Extraction           │
+│ Agent Selection             │
+└──────────────┬──────────────┘
+               │
+               ▼
+
+┌─────────────────────────────┐
+│      LangGraph Router       │
+│                             │
+│ Workflow Orchestration      │
+│ State Management            │
+└───────┬─────────┬───────────┘
+        │         │
+        │         │
+        ▼         ▼
+
+┌─────────────┐  ┌─────────────┐
+│ Foundation  │  │ Graph Agent │
+│   Agent     │  │             │
+└──────┬──────┘  └──────┬──────┘
+       │                │
+       │                │
+       └───────┬────────┘
+               │
+               ▼
+
+┌─────────────────────────────┐
+│         MCP Gateway         │
+│                             │
+│ Tool Registry               │
+│ Tool Discovery              │
+│ Tool Invocation             │
+└──────────────┬──────────────┘
+               │
+   ┌───────────┼───────────┐
+   │           │           │
+   ▼           ▼           ▼
+
+┌─────────┐ ┌─────────┐ ┌─────────────┐
+│ Drug    │ │ Graph   │ │ Publication │
+│ Tool    │ │ Tool    │ │ Tool        │
+└────┬────┘ └────┬────┘ └──────┬──────┘
+     │           │             │
+     ▼           ▼             ▼
+
+┌─────────┐ ┌─────────┐ ┌─────────────┐
+│ drugs   │ │ Neo4j   │ │ publications│
+│ .json   │ │ Future  │ │ .json       │
+└─────────┘ └─────────┘ └─────────────┘
+
+               │
+               ▼
+
+┌─────────────────────────────┐
+│        Report Node          │
+│                             │
+│ Evidence Aggregation        │
+│ Research Summary            │
+└──────────────┬──────────────┘
+               │
+               ▼
+
+┌─────────────────────────────┐
+│       Streamlit UI          │
+│                             │
+│ Supervisor Decision         │
+│ Agent Results              │
+│ Final Research Report       │
+└─────────────────────────────┘

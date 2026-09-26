@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {"id": "KRAS"},
+    {"id": "MAPK"},
+    {"id": "Sotorasib"},
+    {"id": "Pancreatic Cancer"}
+  ],
+
+  "edges": [
+    {"source": "Sotorasib", "target": "KRAS"},
+    {"source": "KRAS", "target": "MAPK"},
+    {"source": "MAPK", "target": "Pancreatic Cancer"}
+  ]
+}

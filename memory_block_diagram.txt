@@ -1,0 +1,112 @@
+┌──────────────────────────────────────────────┐
+│                    USER                      │
+│                                              │
+│   Ask Research Question                      │
+│   "Analyze KRAS importance"                  │
+└───────────────────┬──────────────────────────┘
+                    │
+                    ▼
+
+┌──────────────────────────────────────────────┐
+│                Streamlit UI                  │
+│                                              │
+│ • Query Input                                │
+│ • Agent Results                              │
+│ • Research Report                            │
+└───────────────────┬──────────────────────────┘
+                    │
+                    ▼
+
+┌──────────────────────────────────────────────┐
+│            Short-Term Memory                 │
+│                                              │
+│ • Current Session Context                    │
+│ • Last Entity                                │
+│ • Last Query                                 │
+└───────────────────┬──────────────────────────┘
+                    │
+                    ▼
+
+┌──────────────────────────────────────────────┐
+│             Supervisor Agent                 │
+│                                              │
+│ • Intent Classification                      │
+│ • Entity Extraction                          │
+│ • Agent Selection                            │
+│ • Query Resolution                           │
+└───────────────────┬──────────────────────────┘
+                    │
+                    ▼
+
+┌──────────────────────────────────────────────┐
+│            Long-Term Memory                  │
+│                                              │
+│ • Research History                           │
+│ • Previous KRAS Findings                     │
+│ • Stored Knowledge                           │
+│ • Persistent Memory JSON                     │
+└───────────────────┬──────────────────────────┘
+                    │
+                    ▼
+
+┌──────────────────────────────────────────────┐
+│            LangGraph StateGraph              │
+│                                              │
+│ • Workflow Routing                           │
+│ • Shared ResearchState                       │
+│ • Agent Orchestration                        │
+└───────────────────┬──────────────────────────┘
+                    │
+ ┌──────────────────┼──────────────────┐
+ │                  │                  │
+ ▼                  ▼                  ▼
+
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Foundation  │ │ Graph Agent │ │ Publication │
+│   Agent     │ │             │ │   Agent     │
+└──────┬──────┘ └──────┬──────┘ └──────┬──────┘
+       │               │               │
+       └───────┬───────┴───────┬───────┘
+               │               │
+               ▼
+
+┌──────────────────────────────────────────────┐
+│                MCP Gateway                   │
+│                                              │
+│ • Tool Discovery                             │
+│ • Tool Registry                              │
+│ • Tool Invocation                            │
+│ • Request Logging                            │
+│ • Response Handling                          │
+└───────────────────┬──────────────────────────┘
+                    │
+
+    ┌───────────────┼────────────────┐
+    │               │                │
+    ▼               ▼                ▼
+
+┌──────────┐ ┌─────────────┐ ┌──────────────┐
+│Drug Tool │ │ Graph Tools │ │ PDF Search   │
+└────┬─────┘ └──────┬──────┘ └──────┬───────┘
+     │              │               │
+
+     ▼              ▼               ▼
+
+drugs.json   Graph Analytics     PDF Repository
+             ├─ PageRank         ├─ KRAS Papers
+             ├─ Degree Centrality
+             ├─ Betweenness
+             └─ Closeness
+
+                    │
+                    ▼
+
+┌──────────────────────────────────────────────┐
+│             Research Report                  │
+│                                              │
+│ • Drug Information                           │
+│ • Graph Relationships                        │
+│ • Graph Analytics                            │
+│ • Publication Evidence                       │
+│ • Final Summary                              │
+└──────────────────────────────────────────────┘
